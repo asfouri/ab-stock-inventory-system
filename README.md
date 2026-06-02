@@ -221,16 +221,19 @@ The vendeur interface is focused on sales operations and personal sales tracking
   <tr>
     <td align="center">
       <strong>Vendeur POS Interface</strong><br><br>
-      <img src="screenshots/pos-interface-seller.png" width="100%">
-    </td>
-    <td align="center">
-      <strong>Vendeur Sales History</strong><br><br>
-      <img src="screenshots/sales-history-seller.png" width="100%">
+      <img src="./screenshots/seller-pos-interface.png" width="100%">
     </td>
   </tr>
 </table>
 
----
+<table>
+  <tr>
+    <td align="center">
+      <strong>Vendeur Sales History</strong><br><br>
+      <img src="./screenshots/seller-sales-history.png" width="100%">
+    </td>
+  </tr>
+</table>
 
 ## Fournisseur Screens
 
