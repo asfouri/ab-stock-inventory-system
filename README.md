@@ -1,39 +1,79 @@
-# A&B Stock — POS and Inventory Management System
+<div align="center">
 
-A&B Stock is a PHP 8 web application designed for sales, stock, and commercial management.  
-It provides a complete Point of Sale interface, inventory tracking, supplier management, user management, sales history, and dashboard analytics.
+# A&B Stock  
+### POS and Inventory Management System
 
-The project follows a structured MVC architecture and includes role-based access for administrators, sellers, and suppliers.
+A modern PHP 8 web application for sales, stock, suppliers, users, and commercial management.
+
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![MVC](https://img.shields.io/badge/Architecture-MVC-2E86DE?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-2ECC71?style=for-the-badge)
+
+</div>
 
 ---
 
-## Preview
+## Overview
+
+**A&B Stock** is a complete **Point of Sale and Inventory Management System** developed with **PHP 8**, **MySQL**, **PDO**, **JavaScript**, and a structured **MVC architecture**.
+
+The application helps manage products, categories, suppliers, users, sales, stock levels, and dashboard analytics through a clean and modern interface.
+
+It supports three different user roles:
+
+- **Administrator**
+- **Seller**
+- **Supplier**
+
+Each role has its own access permissions and dedicated interface.
+
+---
+
+## Live Preview
+
+<div align="center">
 
 ![Dashboard Preview](screenshots/dashboard-admin.png)
+
+</div>
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [User Roles](#user-roles)
+- [Screenshots](#screenshots)
+- [Technologies Used](#technologies-used)
+- [Project Architecture](#project-architecture)
+- [Main Modules](#main-modules)
+- [Security Features](#security-features)
+- [Database](#database)
+- [Installation](#installation)
+- [Project Highlights](#project-highlights)
+- [Academic Context](#academic-context)
+- [Author](#author)
 
 ---
 
 ## Features
 
-- Secure authentication system
-- Role-based access control
-- Administrator, seller, and supplier interfaces
-- Product management
-- Category management
-- Supplier management
-- User management
-- POS / cashier interface
-- Cart and sales validation
-- Automatic stock update after each sale
-- Sales history
-- Dashboard analytics
-- Low-stock alerts
-- Light and dark theme
-- Cookie consent system
-- CSRF protection
-- Password hashing
-- PDO prepared statements
-- Soft delete for data integrity
+| Feature | Description |
+|---|---|
+| Authentication | Secure login and signup system |
+| Role-Based Access | Separate access for admin, seller, and supplier |
+| Product Management | Add, edit, delete, filter, and search products |
+| Category Management | Organize products by category |
+| Supplier Management | Manage suppliers and linked accounts |
+| User Management | Manage administrators, sellers, and suppliers |
+| POS Interface | Add products to cart and validate sales |
+| Sales History | Track sales with totals, VAT, status, and details |
+| Dashboard Analytics | Revenue, sales count, stock value, and alerts |
+| Stock Alerts | Detect products under stock threshold |
+| Light / Dark Theme | User interface theme switching |
+| Cookie Consent | Access blocked until cookies are accepted |
+| Security | CSRF, bcrypt, PDO prepared statements, role checks |
 
 ---
 
@@ -41,116 +81,192 @@ The project follows a structured MVC architecture and includes role-based access
 
 ### Administrator
 
-The administrator has full access to the system.  
-They can manage users, products, categories, suppliers, sales history, application settings, and dashboard statistics.
+The administrator has full access to the system.
+
+Main permissions:
+
+- Manage products
+- Manage categories
+- Manage suppliers
+- Manage users
+- Access sales history
+- View dashboard statistics
+- Configure application settings
 
 ### Seller
 
-The seller can access the POS interface, search products, add products to the cart, validate sales, and view their own sales history.
+The seller can manage sales through the POS interface.
+
+Main permissions:
+
+- Search products
+- Add products to cart
+- Validate sales
+- View personal sales history
 
 ### Supplier
 
-The supplier can view only the products and stock information related to the products they provide.
+The supplier has restricted access.
+
+Main permissions:
+
+- View only supplied products
+- Check stock information related to their products
 
 ---
 
 ## Screenshots
 
-### Cookie Consent
+### Authentication and Access
 
-![Cookie Consent](screenshots/cookie-consent.png)
+<table>
+  <tr>
+    <td align="center">
+      <strong>Cookie Consent</strong><br>
+      <img src="screenshots/cookie-consent.png" width="100%">
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Login - Light Mode</strong><br>
+      <img src="screenshots/login-light.png" width="100%">
+    </td>
+    <td align="center">
+      <strong>Login - Dark Mode</strong><br>
+      <img src="screenshots/login-dark.png" width="100%">
+    </td>
+  </tr>
+</table>
 
 ---
 
-### Login Pages
+### Administrator Interface
 
-#### Light Mode Login
+<table>
+  <tr>
+    <td align="center">
+      <strong>Admin Dashboard</strong><br>
+      <img src="screenshots/dashboard-admin.png" width="100%">
+    </td>
+  </tr>
+</table>
 
-![Light Login](screenshots/login-light.png)
+<table>
+  <tr>
+    <td align="center">
+      <strong>Product Management</strong><br>
+      <img src="screenshots/products-admin.png" width="100%">
+    </td>
+    <td align="center">
+      <strong>Category Management</strong><br>
+      <img src="screenshots/categories-admin.png" width="100%">
+    </td>
+  </tr>
+</table>
 
-#### Dark Mode Login
+<table>
+  <tr>
+    <td align="center">
+      <strong>Supplier Management</strong><br>
+      <img src="screenshots/suppliers-admin.png" width="100%">
+    </td>
+    <td align="center">
+      <strong>User Management</strong><br>
+      <img src="screenshots/users-admin.png" width="100%">
+    </td>
+  </tr>
+</table>
 
-![Dark Login](screenshots/login-dark.png)
-
----
-
-### Admin Interface
-
-#### Admin Dashboard
-
-![Admin Dashboard](screenshots/dashboard-admin.png)
-
-#### Product Management
-
-![Product Management](screenshots/products-admin.png)
-
-#### Category Management
-
-![Category Management](screenshots/categories-admin.png)
-
-#### Supplier Management
-
-![Supplier Management](screenshots/suppliers-admin.png)
-
-#### User Management
-
-![User Management](screenshots/users-admin.png)
-
-#### POS Interface - Admin
-
-![POS Interface Admin](screenshots/pos-interface-admin.png)
-
-#### Sales History - Admin
-
-![Sales History Admin](screenshots/sales-history-admin.png)
+<table>
+  <tr>
+    <td align="center">
+      <strong>Admin POS Interface</strong><br>
+      <img src="screenshots/pos-interface-admin.png" width="100%">
+    </td>
+    <td align="center">
+      <strong>Admin Sales History</strong><br>
+      <img src="screenshots/sales-history-admin.png" width="100%">
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### Seller Interface
 
-#### POS Interface - Seller
-
-![POS Interface Seller](screenshots/pos-interface-seller.png)
-
-#### Sales History - Seller
-
-![Sales History Seller](screenshots/sales-history-seller.png)
+<table>
+  <tr>
+    <td align="center">
+      <strong>Seller POS Interface</strong><br>
+      <img src="screenshots/pos-interface-seller.png" width="100%">
+    </td>
+    <td align="center">
+      <strong>Seller Sales History</strong><br>
+      <img src="screenshots/sales-history-seller.png" width="100%">
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### Supplier Interface
 
-#### Supplier Product View
-
-![Supplier Products](screenshots/supplier-products.png)
+<table>
+  <tr>
+    <td align="center">
+      <strong>Supplier Product View</strong><br>
+      <img src="screenshots/supplier-products.png" width="100%">
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## Technologies Used
 
-- PHP 8
-- MySQL / MariaDB
-- PDO
-- HTML5
-- CSS3
-- JavaScript
-- AJAX
-- MVC Architecture
-- XAMPP
+| Technology | Usage |
+|---|---|
+| PHP 8 | Backend development |
+| MySQL / MariaDB | Database |
+| PDO | Secure database access |
+| HTML5 | Page structure |
+| CSS3 | Styling and responsive UI |
+| JavaScript | Dynamic interactions |
+| AJAX | Real-time product search and sales validation |
+| MVC Architecture | Clean project organization |
+| XAMPP | Local development environment |
 
 ---
 
 ## Project Architecture
 
-The project follows the MVC architecture:
+The project follows a clean MVC structure:
 
 ```text
 ab-stock-inventory-system/
 ├── config/
+│   └── Database configuration
+│
 ├── Controleur/
+│   └── Controllers for authentication, products, sales, admin actions
+│
 ├── Modele/
+│   └── Database models and business logic
+│
 ├── Vue/
+│   └── Application views and user interfaces
+│
 ├── public/
+│   └── CSS, JavaScript, and public assets
+│
 ├── database/
+│   └── SQL database file
+│
 ├── screenshots/
+│   └── Project screenshots for documentation
+│
 └── index.php
+    └── Front controller and main router
