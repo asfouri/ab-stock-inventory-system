@@ -3,7 +3,7 @@
 # A&B Stock  
 ### POS and Inventory Management System
 
-A modern PHP 8 web application for sales, stock, suppliers, users, and commercial management.
+A professional PHP 8 web application for stock management, sales processing, suppliers, users, and commercial operations.
 
 ![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -16,21 +16,21 @@ A modern PHP 8 web application for sales, stock, suppliers, users, and commercia
 
 ## Overview
 
-**A&B Stock** is a complete **Point of Sale and Inventory Management System** developed with **PHP 8**, **MySQL**, **PDO**, **JavaScript**, and a structured **MVC architecture**.
+**A&B Stock** is a complete **Point of Sale and Inventory Management System** developed using **PHP 8**, **MySQL**, **PDO**, **JavaScript**, and a structured **MVC architecture**.
 
-The application helps manage products, categories, suppliers, users, sales, stock levels, and dashboard analytics through a clean and modern interface.
+The system allows a store to manage products, categories, suppliers, users, sales, stock levels, and dashboard statistics through a clean and modern interface.
 
-It supports three different user roles:
+The application supports three main user types:
 
 - **Administrator**
-- **Seller**
-- **Supplier**
+- **Vendeur / Seller**
+- **Fournisseur / Supplier**
 
-Each role has its own access permissions and dedicated interface.
+Each user type has a dedicated interface and specific permissions.
 
 ---
 
-## Live Preview
+## Preview
 
 <div align="center">
 
@@ -43,8 +43,12 @@ Each role has its own access permissions and dedicated interface.
 ## Table of Contents
 
 - [Features](#features)
-- [User Roles](#user-roles)
+- [User Types](#user-types)
 - [Screenshots](#screenshots)
+  - [Public and Authentication Screens](#public-and-authentication-screens)
+  - [Administrator Screens](#administrator-screens)
+  - [Vendeur Screens](#vendeur-screens)
+  - [Fournisseur Screens](#fournisseur-screens)
 - [Technologies Used](#technologies-used)
 - [Project Architecture](#project-architecture)
 - [Main Modules](#main-modules)
@@ -62,26 +66,26 @@ Each role has its own access permissions and dedicated interface.
 | Feature | Description |
 |---|---|
 | Authentication | Secure login and signup system |
-| Role-Based Access | Separate access for admin, seller, and supplier |
-| Product Management | Add, edit, delete, filter, and search products |
+| Role-Based Access | Different access levels for admin, vendeur, and fournisseur |
+| Product Management | Add, update, delete, filter, and search products |
 | Category Management | Organize products by category |
-| Supplier Management | Manage suppliers and linked accounts |
+| Supplier Management | Manage suppliers and linked supplier accounts |
 | User Management | Manage administrators, sellers, and suppliers |
 | POS Interface | Add products to cart and validate sales |
-| Sales History | Track sales with totals, VAT, status, and details |
-| Dashboard Analytics | Revenue, sales count, stock value, and alerts |
-| Stock Alerts | Detect products under stock threshold |
-| Light / Dark Theme | User interface theme switching |
-| Cookie Consent | Access blocked until cookies are accepted |
-| Security | CSRF, bcrypt, PDO prepared statements, role checks |
+| Sales History | Track sales, totals, VAT, status, and sale details |
+| Dashboard Analytics | View revenue, stock value, sales count, and stock alerts |
+| Stock Alerts | Detect products with low stock |
+| Light / Dark Mode | Modern theme switching |
+| Cookie Consent | Cookie confirmation before accessing the application |
+| Security | CSRF protection, bcrypt hashing, PDO prepared statements, and role checks |
 
 ---
 
-## User Roles
+## User Types
 
 ### Administrator
 
-The administrator has full access to the system.
+The administrator has full access to the application.
 
 Main permissions:
 
@@ -89,40 +93,45 @@ Main permissions:
 - Manage categories
 - Manage suppliers
 - Manage users
-- Access sales history
+- Access the POS interface
+- View complete sales history
 - View dashboard statistics
-- Configure application settings
+- Manage application settings
 
-### Seller
+### Vendeur / Seller
 
-The seller can manage sales through the POS interface.
+The vendeur is responsible for sales operations.
 
 Main permissions:
 
+- Access the POS interface
 - Search products
 - Add products to cart
 - Validate sales
 - View personal sales history
 
-### Supplier
+### Fournisseur / Supplier
 
-The supplier has restricted access.
+The fournisseur has limited access to stock information.
 
 Main permissions:
 
-- View only supplied products
-- Check stock information related to their products
+- View supplied products
+- Check stock quantities
+- Access only products linked to their supplier account
 
 ---
 
-## Screenshots
+# Screenshots
 
-### Authentication and Access
+## Public and Authentication Screens
+
+These screens are accessible before entering the role-based areas of the application.
 
 <table>
   <tr>
     <td align="center">
-      <strong>Cookie Consent</strong><br>
+      <strong>Cookie Consent</strong><br><br>
       <img src="screenshots/cookie-consent.png" width="100%">
     </td>
   </tr>
@@ -131,11 +140,11 @@ Main permissions:
 <table>
   <tr>
     <td align="center">
-      <strong>Login - Light Mode</strong><br>
+      <strong>Login - Light Mode</strong><br><br>
       <img src="screenshots/login-light.png" width="100%">
     </td>
     <td align="center">
-      <strong>Login - Dark Mode</strong><br>
+      <strong>Login - Dark Mode</strong><br><br>
       <img src="screenshots/login-dark.png" width="100%">
     </td>
   </tr>
@@ -143,51 +152,60 @@ Main permissions:
 
 ---
 
-### Administrator Interface
+## Administrator Screens
+
+The administrator interface provides complete control over the system, including stock, products, users, suppliers, sales, and statistics.
+
+### Admin Dashboard
 
 <table>
   <tr>
     <td align="center">
-      <strong>Admin Dashboard</strong><br>
       <img src="screenshots/dashboard-admin.png" width="100%">
     </td>
   </tr>
 </table>
 
+### Product and Category Management
+
 <table>
   <tr>
     <td align="center">
-      <strong>Product Management</strong><br>
+      <strong>Product Management</strong><br><br>
       <img src="screenshots/products-admin.png" width="100%">
     </td>
     <td align="center">
-      <strong>Category Management</strong><br>
+      <strong>Category Management</strong><br><br>
       <img src="screenshots/categories-admin.png" width="100%">
     </td>
   </tr>
 </table>
 
+### Supplier and User Management
+
 <table>
   <tr>
     <td align="center">
-      <strong>Supplier Management</strong><br>
+      <strong>Supplier Management</strong><br><br>
       <img src="screenshots/suppliers-admin.png" width="100%">
     </td>
     <td align="center">
-      <strong>User Management</strong><br>
+      <strong>User Management</strong><br><br>
       <img src="screenshots/users-admin.png" width="100%">
     </td>
   </tr>
 </table>
 
+### Admin Sales Operations
+
 <table>
   <tr>
     <td align="center">
-      <strong>Admin POS Interface</strong><br>
+      <strong>Admin POS Interface</strong><br><br>
       <img src="screenshots/pos-interface-admin.png" width="100%">
     </td>
     <td align="center">
-      <strong>Admin Sales History</strong><br>
+      <strong>Admin Sales History</strong><br><br>
       <img src="screenshots/sales-history-admin.png" width="100%">
     </td>
   </tr>
@@ -195,16 +213,18 @@ Main permissions:
 
 ---
 
-### Seller Interface
+## Vendeur Screens
+
+The vendeur interface is focused on sales operations and personal sales tracking.
 
 <table>
   <tr>
     <td align="center">
-      <strong>Seller POS Interface</strong><br>
+      <strong>Vendeur POS Interface</strong><br><br>
       <img src="screenshots/pos-interface-seller.png" width="100%">
     </td>
     <td align="center">
-      <strong>Seller Sales History</strong><br>
+      <strong>Vendeur Sales History</strong><br><br>
       <img src="screenshots/sales-history-seller.png" width="100%">
     </td>
   </tr>
@@ -212,12 +232,14 @@ Main permissions:
 
 ---
 
-### Supplier Interface
+## Fournisseur Screens
+
+The fournisseur interface gives access only to the products and stock information related to that supplier.
 
 <table>
   <tr>
     <td align="center">
-      <strong>Supplier Product View</strong><br>
+      <strong>Fournisseur Product View</strong><br><br>
       <img src="screenshots/supplier-products.png" width="100%">
     </td>
   </tr>
@@ -230,12 +252,12 @@ Main permissions:
 | Technology | Usage |
 |---|---|
 | PHP 8 | Backend development |
-| MySQL / MariaDB | Database |
+| MySQL / MariaDB | Database management |
 | PDO | Secure database access |
 | HTML5 | Page structure |
-| CSS3 | Styling and responsive UI |
-| JavaScript | Dynamic interactions |
-| AJAX | Real-time product search and sales validation |
+| CSS3 | Styling and responsive design |
+| JavaScript | Dynamic interface behavior |
+| AJAX | Real-time product search and sale validation |
 | MVC Architecture | Clean project organization |
 | XAMPP | Local development environment |
 
@@ -251,7 +273,7 @@ ab-stock-inventory-system/
 │   └── Database configuration
 │
 ├── Controleur/
-│   └── Controllers for authentication, products, sales, admin actions
+│   └── Controllers for authentication, products, sales, and admin actions
 │
 ├── Modele/
 │   └── Database models and business logic
@@ -266,7 +288,7 @@ ab-stock-inventory-system/
 │   └── SQL database file
 │
 ├── screenshots/
-│   └── Project screenshots for documentation
+│   └── Project screenshots
 │
 └── index.php
     └── Front controller and main router
