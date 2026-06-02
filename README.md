@@ -3,9 +3,7 @@
 # A&B Stock  
 ### POS & Inventory Management System
 
-A professional PHP 8 web application for stock management, sales processing, suppliers, users, and commercial operations.
-
-<br>
+A professional PHP 8 web application for sales, inventory, suppliers, users, and commercial management.
 
 ![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -13,27 +11,23 @@ A professional PHP 8 web application for stock management, sales processing, sup
 ![MVC](https://img.shields.io/badge/Architecture-MVC-2E86DE?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-2ECC71?style=for-the-badge)
 
-<br>
-
-**Inventory Management · POS System · Role-Based Access · Dashboard Analytics · Secure PHP MVC**
-
 </div>
 
 ---
 
-## Project Overview
+## Overview
 
-**A&B Stock** is a complete **Point of Sale and Inventory Management System** developed with **PHP 8**, **MySQL**, **PDO**, **JavaScript**, and a structured **MVC architecture**.
+**A&B Stock** is a complete **Point of Sale and Inventory Management System** developed using **PHP 8**, **MySQL**, **PDO**, **JavaScript**, and a structured **MVC architecture**.
 
-The application is designed to help a store manage its daily commercial operations, including products, categories, suppliers, users, sales, stock levels, and dashboard statistics.
+The system helps stores manage products, categories, suppliers, users, sales, stock levels, and dashboard statistics through a clean and modern web interface.
 
-The system provides a clean role-based experience for:
+The application supports three main user types:
 
-| User Type | Main Purpose |
-|---|---|
-| **Administrator** | Full system management |
-| **Vendeur / Seller** | Sales and POS operations |
-| **Fournisseur / Supplier** | Supplier-specific product and stock access |
+- **Administrator**
+- **Vendeur / Seller**
+- **Fournisseur / Supplier**
+
+Each role has a dedicated interface, specific permissions, and restricted access according to its responsibilities.
 
 ---
 
@@ -41,7 +35,7 @@ The system provides a clean role-based experience for:
 
 <div align="center">
 
-<img src="screenshots/dashboard-admin.png" width="95%" alt="A&B Stock Dashboard Preview">
+<img src="screenshots/dashboard-admin.png" width="95%" alt="Admin Dashboard Preview">
 
 </div>
 
@@ -51,13 +45,8 @@ The system provides a clean role-based experience for:
 
 - [Key Features](#key-features)
 - [User Types](#user-types)
-- [How to Use the Project](#how-to-use-the-project)
 - [Screenshots](#screenshots)
-  - [Public and Authentication Screens](#public--authentication-screens)
-  - [Administrator Screens](#administrator-screens)
-  - [Vendeur Screens](#vendeur-screens)
-  - [Fournisseur Screens](#fournisseur-screens)
-- [Technical Section](#technical-section)
+- [Technical Deep Dive](#technical-deep-dive)
 - [Technologies Used](#technologies-used)
 - [Project Architecture](#project-architecture)
 - [Main Modules](#main-modules)
@@ -74,19 +63,19 @@ The system provides a clean role-based experience for:
 
 | Feature | Description |
 |---|---|
-| **Authentication** | Secure login and signup system |
-| **Role-Based Access** | Different permissions for admin, vendeur, and fournisseur |
-| **Product Management** | Add, update, delete, filter, and search products |
-| **Category Management** | Organize products by category |
-| **Supplier Management** | Manage suppliers and linked supplier accounts |
-| **User Management** | Manage administrators, sellers, and suppliers |
-| **POS Interface** | Add products to cart and validate sales |
-| **Sales History** | Track sales, totals, VAT, status, and sale details |
-| **Dashboard Analytics** | Revenue, stock value, sales count, and stock alerts |
-| **Stock Alerts** | Detect products below their alert threshold |
-| **Light / Dark Mode** | Modern theme switching system |
-| **Cookie Consent** | Cookie confirmation before accessing the application |
-| **Security Layer** | CSRF protection, bcrypt hashing, PDO prepared statements, and role checks |
+| Authentication | Secure login and signup system |
+| Role-Based Access | Separate access for admin, vendeur, and fournisseur |
+| Product Management | Add, update, delete, filter, and search products |
+| Category Management | Organize products into categories |
+| Supplier Management | Manage suppliers and linked supplier accounts |
+| User Management | Manage administrators, sellers, and suppliers |
+| POS Interface | Add products to cart and validate sales |
+| Sales History | Track sales, totals, VAT, status, and sale details |
+| Dashboard Analytics | View revenue, stock value, sales count, and stock alerts |
+| Stock Alerts | Detect products below their alert threshold |
+| Light / Dark Mode | Modern theme switching system |
+| Cookie Consent | Cookie confirmation before accessing the application |
+| Security | CSRF protection, bcrypt hashing, PDO prepared statements, and role checks |
 
 ---
 
@@ -94,7 +83,7 @@ The system provides a clean role-based experience for:
 
 ### Administrator
 
-The administrator has complete control over the platform.
+The administrator has full access to the application.
 
 **Main permissions:**
 
@@ -107,8 +96,6 @@ The administrator has complete control over the platform.
 - View dashboard statistics
 - Manage application settings
 
----
-
 ### Vendeur / Seller
 
 The vendeur is responsible for sales operations.
@@ -116,16 +103,14 @@ The vendeur is responsible for sales operations.
 **Main permissions:**
 
 - Access the POS interface
-- Search available products
+- Search products
 - Add products to the cart
 - Validate sales
 - View personal sales history
 
----
-
 ### Fournisseur / Supplier
 
-The fournisseur has restricted access to product and stock data.
+The fournisseur has limited access to stock information.
 
 **Main permissions:**
 
@@ -135,56 +120,161 @@ The fournisseur has restricted access to product and stock data.
 
 ---
 
-# How to Use the Project
+# Screenshots
 
-This section explains how the application is used after installation.
+## Public & Authentication Screens
+
+These screens are accessible before entering the role-based areas of the application.
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Cookie Consent</strong><br><br>
+      <img src="screenshots/cookie-consent.png" width="100%" alt="Cookie Consent">
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Login - Light Mode</strong><br><br>
+      <img src="screenshots/login-light.png" width="100%" alt="Login Light Mode">
+    </td>
+    <td align="center" width="50%">
+      <strong>Login - Dark Mode</strong><br><br>
+      <img src="screenshots/login-dark.png" width="100%" alt="Login Dark Mode">
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 1. Accept Cookie Consent
+## Administrator Screens
 
-When opening the application for the first time, the user must accept the required cookies.
+The administrator interface provides complete control over the system, including stock, products, users, suppliers, sales, and statistics.
 
-Cookies are used for:
+### Admin Dashboard
 
-- PHP session authentication
-- CSRF protection
-- Interface theme preference
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/dashboard-admin.png" width="100%" alt="Admin Dashboard">
+    </td>
+  </tr>
+</table>
 
-If the user refuses cookies, the application remains inaccessible.
+### Product & Category Management
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Product Management</strong><br><br>
+      <img src="screenshots/products-admin.png" width="100%" alt="Product Management">
+    </td>
+    <td align="center" width="50%">
+      <strong>Category Management</strong><br><br>
+      <img src="screenshots/categories-admin.png" width="100%" alt="Category Management">
+    </td>
+  </tr>
+</table>
+
+### Supplier & User Management
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Supplier Management</strong><br><br>
+      <img src="screenshots/suppliers-admin.png" width="100%" alt="Supplier Management">
+    </td>
+    <td align="center" width="50%">
+      <strong>User Management</strong><br><br>
+      <img src="screenshots/users-admin.png" width="100%" alt="User Management">
+    </td>
+  </tr>
+</table>
+
+### Admin Sales Operations
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Admin POS Interface</strong><br><br>
+      <img src="screenshots/pos-interface-admin.png" width="100%" alt="Admin POS Interface">
+    </td>
+    <td align="center" width="50%">
+      <strong>Admin Sales History</strong><br><br>
+      <img src="screenshots/sales-history-admin.png" width="100%" alt="Admin Sales History">
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 2. Login to the System
+## Vendeur Screens
 
-Users log in using their email and password.
+The vendeur interface is focused on sales operations and personal sales tracking.
 
-After authentication, the system redirects the user based on their role:
+<table>
+  <tr>
+    <td align="center">
+      <strong>Vendeur POS Interface</strong><br><br>
+      <img src="./screenshots/seller-pos-interface.png" width="100%" alt="Vendeur POS Interface">
+    </td>
+  </tr>
+</table>
 
-| Role | Redirected To |
+<table>
+  <tr>
+    <td align="center">
+      <strong>Vendeur Sales History</strong><br><br>
+      <img src="./screenshots/seller-sales-history.png" width="100%" alt="Vendeur Sales History">
+    </td>
+  </tr>
+</table>
+
+---
+
+## Fournisseur Screens
+
+The fournisseur interface gives access only to the products and stock information related to that supplier.
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Fournisseur Product View</strong><br><br>
+      <img src="screenshots/supplier-products.png" width="100%" alt="Fournisseur Product View">
+    </td>
+  </tr>
+</table>
+
+---
+
+# Technical Deep Dive
+
+## Backend Architecture
+
+The backend is built with **PHP 8** using an object-oriented approach.  
+The application follows the **MVC pattern**, which separates business logic, user interface, and request handling.
+
+| Layer | Responsibility |
 |---|---|
-| Admin | Admin dashboard |
-| Vendeur | POS / sales interface |
-| Fournisseur | Supplier product view |
+| Model | Handles database access and business rules |
+| View | Displays HTML/PHP user interfaces |
+| Controller | Processes requests and connects models with views |
+| Front Controller | `index.php` centralizes routing and page access |
+
+This separation makes the project easier to maintain, debug, and extend.
 
 ---
 
-## 3. Administrator Workflow
+## MVC Routing System
 
-The administrator can manage the entire system.
-
-### Admin can:
-
-1. Open the dashboard to view business statistics.
-2. Manage product categories.
-3. Add, edit, or delete products.
-4. Manage suppliers.
-5. Create and manage users.
-6. Access the POS interface.
-7. View all sales history.
-8. Monitor stock alerts.
-
-### Typical admin workflow:
+The application uses `index.php` as the main entry point.  
+Pages are routed through URL parameters such as:
 
 ```text
-Login → Dashboard → Manage Products → Manage Suppliers → Monitor Sales → Check Stock Alerts
+index.php?page=produits
+index.php?page=caisse
+index.php?page=utilisateurs
+index.php?page=fournisseurs
